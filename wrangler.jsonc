@@ -1,0 +1,16 @@
+{
+  "compatibility_date": "2025-04-01",
+  "main": "src/index.ts",
+  "name": "hono-sunloader",
+  "upload_source_maps": true,
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sunloader-db",
+      "database_id": "cda86441-a2da-4928-bf26-9693713c4a3e"
+    }
+  ]
+}
