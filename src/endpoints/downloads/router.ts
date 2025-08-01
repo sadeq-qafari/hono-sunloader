@@ -19,17 +19,13 @@ downloadsRouter.delete("/:id", DownloadDelete);
 
 downloadsRouter.post('/', async (c) => {
   const body = await c.req.json()
-
-  console.log(`body: ${body}`);
+  console.log(`body: ${JSON.stringify(body)}`);
   
-
-  const parsed = JSON.parse(body)
-
-  if (!parsed) {
+  if (!body) {
     return c.json({ error: `Invaild input: ${body}` }, 400)
   }
 
-  const { url, metadata = '' } = parsed.data
+  const { url, metadata = '' } = body
 
   const now = new Date().toISOString()
   const status = 'queued'
