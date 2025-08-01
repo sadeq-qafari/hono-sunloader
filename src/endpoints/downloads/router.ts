@@ -19,6 +19,10 @@ downloadsRouter.delete("/:id", DownloadDelete);
 
 downloadsRouter.post('/', async (c) => {
   const body = await c.req.json()
+
+  console.log(`body: ${body}`);
+  
+
   const parsed = JSON.parse(body)
 
   if (!parsed) {
