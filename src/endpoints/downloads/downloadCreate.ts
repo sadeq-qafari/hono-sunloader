@@ -9,6 +9,7 @@ export class DownloadCreate extends D1CreateEndpoint<HandleArgs> {
       // this is purposely missing the id, because users shouldn't be able to define it
       url: true,
       status: true,
+      progress: true,
       metadata: true,
       create_date: true,
       start_date: true,

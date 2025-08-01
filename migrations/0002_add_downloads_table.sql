@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS downloads (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     url TEXT NOT NULL,
     status TEXT NULL,
+    progress REAL NULL,
     metadata TEXT NULL,
     create_date DATETIME NOT NULL,
     start_date DATETIME NOT NULL,

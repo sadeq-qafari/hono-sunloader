@@ -8,6 +8,7 @@ export class DownloadUpdate extends D1UpdateEndpoint<HandleArgs> {
     fields: DownloadModel.schema.pick({
       url: true,
       status: true,
+      progress: true,
       metadata: true,
       create_date: true,
       start_date: true,

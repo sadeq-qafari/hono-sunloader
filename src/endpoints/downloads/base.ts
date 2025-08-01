@@ -4,6 +4,7 @@ export const download = z.object({
   id: z.number().int(),
   url: z.string(),
   status: z.string(),
+  progress: z.number(),
   metadata: z.string(),
   create_date: z.string().datetime(),
   start_date: z.string().datetime(),
