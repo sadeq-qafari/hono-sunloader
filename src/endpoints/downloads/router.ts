@@ -27,7 +27,7 @@ downloadsRouter.post('/', async (c) => {
 
   const { url, metadata = '' } = body
 
-  const now = new Date().toISOString()
+  const now = Number(new Date())
   const status = 'queued'
 
   await c.env.DB.prepare(`
@@ -65,7 +65,7 @@ downloadsRouter.put("/:id/progress", async (c) => {
 
 downloadsRouter.put("/:id/finish", async (c) => {
   const id = Number(c.req.param("id"));
-  const now = new Date().toISOString();
+  const now = Number(new Date())
 
   await c.env.DB.prepare(
     `UPDATE downloads SET status = ?, end_date = ? WHERE id = ?`

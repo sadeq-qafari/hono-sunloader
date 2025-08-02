@@ -1,8 +1,6 @@
 import { ApiException, fromHono } from "chanfana";
 import { Hono } from "hono";
-import { tasksRouter } from "./endpoints/tasks/router";
 import { ContentfulStatusCode } from "hono/utils/http-status";
-import { DummyEndpoint } from "./endpoints/dummyEndpoint";
 import { downloadsRouter } from "./endpoints/downloads/router";
 
 // Start a Hono app
@@ -42,11 +40,7 @@ const openapi = fromHono(app, {
 });
 
 // Register Tasks Sub router
-openapi.route("/tasks", tasksRouter);
 openapi.route("/downloads", downloadsRouter);
-
-// Register other endpoints
-openapi.post("/dummy/:slug", DummyEndpoint);
 
 // Export the Hono app
 export default app;
